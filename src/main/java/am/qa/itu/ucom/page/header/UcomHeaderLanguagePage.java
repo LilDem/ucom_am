@@ -3,7 +3,7 @@ package am.qa.itu.ucom.page.header;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import static am.qa.itu.ucom.page.header.UomHeaderPageConstants.*;
+import static am.qa.itu.ucom.page.header.UcomHeaderPageConstants.*;
 
 public class UcomHeaderLanguagePage extends UcomHeaderPage {
 

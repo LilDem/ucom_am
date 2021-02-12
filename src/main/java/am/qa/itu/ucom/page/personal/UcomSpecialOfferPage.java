@@ -11,11 +11,11 @@ public class UcomSpecialOfferPage extends UcomPersonalPage{
 	public UcomSpecialOfferPage(WebDriver driver) {
 		super(driver);
 		}
-	@FindBy(xpath = SAMSUNG_A21_IMG_XPATH)
-	WebElement SamsungImg;
+	@FindBy(xpath = UCOM_BONDS_XPATH)
+	WebElement Ucombond;
 	
-	public boolean isSamsungImgDisplayed() {
-		return SamsungImg.isDisplayed();
+	public boolean isUcomBondDisplayed() {
+		return Ucombond.isDisplayed();
 	}
 	
 

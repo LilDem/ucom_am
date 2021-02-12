@@ -1,6 +1,6 @@
 package am.qa.itu.ucom.page.business;
 import static am.qa.itu.ucom.page.business.UcomBusinessPageConstants.*;
-import static am.qa.itu.ucom.page.header.UomHeaderPageConstants.UCOM_PERSONAL_XPATH;
+import static am.qa.itu.ucom.page.header.UcomHeaderPageConstants.UCOM_PERSONAL_XPATH;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

@@ -21,6 +21,8 @@ import am.qa.itu.ucom.page.personal.UcomPersonalPage;
 import am.qa.itu.ucom.page.personal.UcomSpecialOfferPage;
 import am.qa.itu.ucom.page.results.UcomSearchResultPage;
 import am.qa.itu.ucom.page.shop.UcomShopPage;
+import am.qa.itu.ucom.page.udoctor.UcomUdoctorPage;
+import am.qa.itu.ucom.page.udoctor.UdoctorLoginPage;
 import am.qa.itu.ucom.page.upay.UcomUpayPage;
 import amq.qa.itu.base.BaseTest;
 
@@ -108,8 +110,8 @@ public class UcomTest extends BaseTest{
 		  UcomPersonalPage personal = new UcomPersonalPage(driver);
 		  //from personal page click on special offers
 		  UcomSpecialOfferPage offer = personal.clickOnSpecialOffers();
-		  // make sure Samsung A21 advertisement exists  
-		  Assert.assertTrue(offer.isSamsungImgDisplayed());
+		  // make sure Ucom Bonds exists  
+		  Assert.assertTrue(offer.isUcomBondDisplayed());
 		  }
 	  
 	  @Test
@@ -188,7 +190,7 @@ public class UcomTest extends BaseTest{
 		Assert.assertTrue(bsns.isBusinessTvPresent());
 		}
 	
-	@Test(priority = 1)
+	@Test
 	    public void checkBusinessTvExtraImg() {
 		UcomHeaderPage business = new UcomHeaderPage(driver);
 		//from the main page go to business part
@@ -198,7 +200,32 @@ public class UcomTest extends BaseTest{
 		// on the opened page utv extra offer's present
 		Assert.assertTrue(tv.isTvExtraImgPresents());
 		}
-
+	
+	@Test
+	   public void checkUdoctorPhone() {
+		UcomHeaderPage main = new UcomHeaderPage(driver);
+		UcomUdoctorPage doctor = main.clickOnUDoctor();
+		Assert.assertTrue(doctor.isUdoctorPhoneDisplayed());
+	}
+	
+	@Test
+	   public void checkUdoctorLogin() {
+		UcomHeaderPage main = new UcomHeaderPage(driver);
+		UcomUdoctorPage doctor = main.clickOnUDoctor();
+		UdoctorLoginPage login = doctor.clickOnLoginBtn();
+		login.logIn("3333");
+		Assert.assertTrue(login.isInputErrorDisplayed());
+		
+	}
+	
+	@Test
+	public void checkNameTyping() {
+		UcomHeaderPage main = new UcomHeaderPage(driver);
+		main.clickOnUDoctor();
+		UcomUdoctorPage dc = new UcomUdoctorPage(driver);
+		dc.typeDoctorsNameWrong("aaa");
+		Assert.assertTrue(dc.noResultisDisplayed());
+		}
 	
 	@BeforeMethod
 	public void navigateToMainPage() {

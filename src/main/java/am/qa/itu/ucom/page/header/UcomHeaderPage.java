@@ -1,6 +1,6 @@
 package am.qa.itu.ucom.page.header;
 
-import static am.qa.itu.ucom.page.header.UomHeaderPageConstants.*;
+import static am.qa.itu.ucom.page.header.UcomHeaderPageConstants.*;
 
 import javax.naming.directory.SearchResult;
 
@@ -12,6 +12,7 @@ import am.qa.itu.ucom.page.business.UcomBusinessPage;
 import am.qa.itu.ucom.page.lang.UcomRussianPage;
 import am.qa.itu.ucom.page.personal.UcomPersonalPage;
 import am.qa.itu.ucom.page.results.UcomSearchResultPage;
+import am.qa.itu.ucom.page.udoctor.UcomUdoctorPage;
 import am.qa.itu.ucom.page.upay.UcomUpayPage;
 
 public class UcomHeaderPage extends UcomBasePage {
@@ -50,10 +51,18 @@ public class UcomHeaderPage extends UcomBasePage {
 	@FindBy(xpath = ARM_LNG_LINK_XPATH)
 	WebElement armLngLink;
 	
+	@FindBy(xpath = UDOCTOR_LINK_XPATH)
+	WebElement uDoctorLink;
+	
 	public UcomPersonalPage clickOnUcomLogo() {
 		ucomLogoLink.click();
 		
 		return new UcomPersonalPage(driver);
+	}
+	public UcomUdoctorPage clickOnUDoctor() {
+		uDoctorLink.click();
+		
+		return new UcomUdoctorPage(driver);
 	}
 	
 	public UcomBusinessPage navigateToBusinessPage() {

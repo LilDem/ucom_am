@@ -11,7 +11,7 @@ public class UcomPersonalPageConstants {
     public static final String MOBILE_SERVICES_XPATH = "//a[@class = 'db tc pr' and contains(@href, '/personal/personal-mobile-services/')]";
     public static final String REVOLUTIONARY_OFFER_XPATH = "//a[contains(@href, '/personal-mobile-services/voice-postpaid/revolutionary-offer/')]";
     public static final String SPECIAL_OFFER_LINK_XPATH = "//a[contains(@href, '/personal/best-deals/') and @class='db tc pr']";
-    public static final String SAMSUNG_A21_IMG_XPATH = "//img[contains(@src, '/file_manager/new year 2021/samsung')]";
+    public static final String UCOM_BONDS_XPATH = "//a[contains(@href,'/personal/best-deals/bond/') and @class = 'fs14 active']";
     public static final String UCOM_SHOP_LINK_XPATH = "//a[contains(@href,'/shop.ucom.am/') and @class='db tc pr']";
     
 }

@@ -1,6 +1,6 @@
 package am.qa.itu.ucom.page.header;
 
-public class UomHeaderPageConstants {
+public class UcomHeaderPageConstants {
 	
 	public static final String UCOM_PERSONAL_XPATH="//a[@class='db sprite']";
 	public static final String UCOM_BUSINESS_XPATH = "//a[contains(@href, '/business/') and @class = 'fs20']";
@@ -14,7 +14,7 @@ public class UomHeaderPageConstants {
     public static final String UCOM_LOGO_XPATH = "//a[@class='db sprite' and contains(@href, '/personal/')]";
     public static final String UCOM_PAYMENT_LINK_XPATH = "//span[@class='db sprite']";
     public static final String UPAY_LINK_XPATH = "//span[@class='db sprite']";
-   
+    public static final String UDOCTOR_LINK_XPATH = "//a[@href='https://udoctor.am']";
 }                                                   
 
 
