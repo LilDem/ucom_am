@@ -15,6 +15,7 @@ import am.qa.itu.ucom.page.business.UcomBusinessTvPage;
 import am.qa.itu.ucom.page.header.UcomHeaderLanguagePage;
 import am.qa.itu.ucom.page.header.UcomHeaderPage;
 import am.qa.itu.ucom.page.lang.UcomRussianPage;
+import am.qa.itu.ucom.page.mediaroom.UcomMediaroomPage;
 import am.qa.itu.ucom.page.personal.UcomForHomePage;
 import am.qa.itu.ucom.page.personal.UcomMobilePage;
 import am.qa.itu.ucom.page.personal.UcomPersonalPage;
@@ -23,12 +24,13 @@ import am.qa.itu.ucom.page.results.UcomSearchResultPage;
 import am.qa.itu.ucom.page.shop.UcomShopPage;
 import am.qa.itu.ucom.page.udoctor.UcomUdoctorPage;
 import am.qa.itu.ucom.page.udoctor.UdoctorLoginPage;
+import am.qa.itu.ucom.page.ukid.UcomUkidPage;
 import am.qa.itu.ucom.page.upay.UcomUpayPage;
 import amq.qa.itu.base.BaseTest;
 
 public class UcomTest extends BaseTest{
 	
-	@Test
+    @Test
 	  public void openBusinessPage() {
 		//1. from header page go to business page
 		UcomHeaderPage business = new UcomHeaderPage(driver);
@@ -225,7 +227,28 @@ public class UcomTest extends BaseTest{
 		UcomUdoctorPage dc = new UcomUdoctorPage(driver);
 		dc.typeDoctorsNameWrong("aaa");
 		Assert.assertTrue(dc.noResultisDisplayed());
-		}
+}
+	
+	@Test
+	public void checkQrImg() {
+		UcomHeaderPage main = new UcomHeaderPage(driver);
+		main.clickOnMediaroom();
+		UcomMediaroomPage media = new UcomMediaroomPage(driver);
+		Assert.assertTrue(media.IsQrDisplayed());
+}
+	
+	@Test
+	public void checkuKid() {
+		UcomHeaderPage search= new UcomHeaderPage(driver);
+		UcomSearchResultPage result = search.searchOption("ukid");
+		result.clickOnUkid();
+		UcomUkidPage kid = new UcomUkidPage(driver);
+		kid.clickOnBuyNow();
+		UcomShopPage ukid = new UcomShopPage(driver);
+		ukid.addToBag();
+		Assert.assertTrue(ukid.isBuyOptionDisplayed());
+		
+}
 	
 	@BeforeMethod
 	public void navigateToMainPage() {

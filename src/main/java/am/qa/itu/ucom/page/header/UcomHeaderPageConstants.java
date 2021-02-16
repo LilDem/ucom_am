@@ -15,6 +15,8 @@ public class UcomHeaderPageConstants {
     public static final String UCOM_PAYMENT_LINK_XPATH = "//span[@class='db sprite']";
     public static final String UPAY_LINK_XPATH = "//span[@class='db sprite']";
     public static final String UDOCTOR_LINK_XPATH = "//a[@href='https://udoctor.am']";
+    public static final String UMEDIAROOM_LINK_XPATH = "//a[contains(@href, 'personal/best-deals/mobile-applications/mediaroom/') and @class = 'landing-button-list__link db pr spriteb media-icon' ]";
+    		
 }                                                   
 
 

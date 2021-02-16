@@ -10,6 +10,7 @@ import org.openqa.selenium.support.FindBy;
 import am.qa.itu.ucom.page.base.UcomBasePage;
 import am.qa.itu.ucom.page.business.UcomBusinessPage;
 import am.qa.itu.ucom.page.lang.UcomRussianPage;
+import am.qa.itu.ucom.page.mediaroom.UcomMediaroomPage;
 import am.qa.itu.ucom.page.personal.UcomPersonalPage;
 import am.qa.itu.ucom.page.results.UcomSearchResultPage;
 import am.qa.itu.ucom.page.udoctor.UcomUdoctorPage;
@@ -23,6 +24,9 @@ public class UcomHeaderPage extends UcomBasePage {
 	
 	@FindBy(xpath = UCOM_PAYMENT_LINK_XPATH)
 	WebElement ucomPaymentLink;
+	
+	@FindBy(xpath = UMEDIAROOM_LINK_XPATH)
+	WebElement uMediaroomLink;
 	
 	@FindBy(xpath = UPAY_LINK_XPATH)
 	WebElement upayLink;
@@ -58,6 +62,11 @@ public class UcomHeaderPage extends UcomBasePage {
 		ucomLogoLink.click();
 		
 		return new UcomPersonalPage(driver);
+	}
+	
+	public UcomMediaroomPage clickOnMediaroom() {
+		uMediaroomLink.click();
+		return new UcomMediaroomPage(driver);
 	}
 	public UcomUdoctorPage clickOnUDoctor() {
 		uDoctorLink.click();
